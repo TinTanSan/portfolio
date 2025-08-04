@@ -1,4 +1,5 @@
 import "./globals.css";
+import Navbar from "./navbar";
 
 export default function RootLayout({
   children,
@@ -7,7 +8,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="flex flex-col items-center">
+        <Navbar />
         {children}
       </body>
     </html>
