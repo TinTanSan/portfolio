@@ -2,52 +2,39 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import ProjectCard from "./ProjectCard";
-export type ProjectDetails ={
-  projectName: string,
-  projectOverview: string,
-  techUsed: Array<string>,
-}
+import { useEffect } from "react";
+import { ProjectDetails, projects } from "./utils/projects";
+import ProjectCard from "./components/ProjectCard";
+import Experience from "./components/Experience";
+import { experiences } from "./utils/experiences";
+
 export default function Home() {
-
-  const projects:Array<ProjectDetails> = [
-    {
-      projectName:"AES-GCM ",
-      projectOverview: `A bare bones implementation of AES-GCM in Rust. For this project I used only the standard 
-        library in rust.`,
-      techUsed: ['rust'],
-    },
-    {
-      projectName: "Password Manager",
-      projectOverview: `A minimalist cross-platform desktop application built to serve my needs for a secure offline 
-        password manager. Taking inspiration from KeePass I set out to create a password manager which would be simple to 
-        use, with help along the way.`,
-      techUsed: ['electron','typescript','tailwind'],
-    },
-    
-    
-    {
-      projectName: "A project",
-      projectOverview: `A minimalist cross-platform desktop application built to serve my needs for a secure offline 
-        password manager. Taking inspiration from KeePass I set out to create a password manager which would be simple to 
-        use, with help along the way. 
-        
-        This sentence should make this overview really really long. Try this sentence if the first one did not make it long enough; shoudl this also not work, try again.
-        This sentence should make this overview really really long. Try this sentence if the first one did not make it long enough; shoudl this also not work, try again.
-        This sentence should make this overview really really long. Try this sentence if the first one did not make it long enough; shoudl this also not work, try again.
-        This sentence should make this overview really really long. Try this sentence if the first one did not make it long enough; shoudl this also not work, try again.
-        This sentence should make this overview really really long. Try this sentence if the first one did not make it long enough; shoudl this also not work, try again.`,
-      techUsed: ['electron','typescript','tailwind'],
-    },
-  ]
-
+  
+  useEffect(()=>{
+      const observer = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if (entry.isIntersecting){
+            entry.target.classList.add('zoom-in-div-in-view')
+            entry.target.classList.remove('zoom-in-div')
+          }else{
+            entry.target.classList.remove('zoom-in-div-in-view')
+            entry.target.classList.add('zoom-in-div')
+          }
+        })
+      }, { threshold: 0.5 })
+      projects.map((_,i)=>{
+        const elem = document.getElementById("projcard-"+i.toString());
+        observer.observe(elem);
+      })
+      
+    },[])
 
 
   return (
-    <div className="flex flex-col w-screen overflow-x-hidden h-full bg-base-200 text-base-content 2xl:text-xl gap-5">
+    <div  className="flex flex-col w-full overflow-x-hidden h-full bg-base-200 text-base-content 2xl:text-xl gap-5">
       <title>Tirth Patel</title>
       {/* landing page (about me) */}
-      <div className="flex flex-col p-5 w-screen h-screen text-wrap flex-wrap justify-center md:justify-end md:pb-10 gap-5">
+      <div id="aboutme" className="flex flex-col p-5 w-screen h-screen text-wrap flex-wrap justify-center md:justify-end md:pb-10 gap-5">
         <div className="flex text-4xl font-bold">
           About me
         </div>
@@ -67,37 +54,37 @@ export default function Home() {
         <Link target="_blank" className="flex w-fit px-5 rounded-lg bg-primary hover:bg-primary-hover text-primary-content h-10 items-center justify-center shadow-lg active:shadow-none" href={"/resume"}>Resume</Link>
         {/* github */}
         <Link href={"https://github.com/TinTanSan"}>
-          <Image src={"/gh.svg"} alt="GH" width={40} height={40} />
+          <Image priority={true} src={"/gh.svg"} alt="GH" width={40} height={40} />
         </Link>
         <Link href={"https://www.linkedin.com/in/tirth-patel-748a89367/"}>
-          <Image src={"/linkedin.svg"} className="rounded-lg" alt="GH" width={40} height={40} />
+          <Image priority={true} src={"/linkedin.svg"} className="rounded-lg" alt="Linkedin" width={40} height={40} />
         </Link>
 
         </div>
       </div>
       {/* projects */}
-      <div className="grid grid-flow-row grid-cols-1 grid-rows-10 gap-5 p-5 w-screen h-screen">
-        <div className="grid row-span-1 h-fit col-span-full text-2xl md:text-3xl lg:text-4xl font-bold">Things I've worked on</div>
-        <div className="grid row-span-9 col-span-full w-full h-full overflow-y-auto overflow-x-auto">
-        <div className={`grid row-span-9 col-span-full grid-flow-row grid-cols-1 grid-rows-3 md:grid-flow-col-dense md:grid-cols-3 md:grid-rows-2 gap-5 h-fit md:h-full overflow-y-auto overflow-x-hidden`}>
-          {projects.map((x:ProjectDetails,i:number)=>
-            <ProjectCard projectDetails={x} key={i.toString()}/>
-          )}
-        </div>
+      <div id="projects" className="grid grid-flow-row grid-cols-1 grid-rows-10 gap-5 p-5 w-screen h-screen">
+        <div className="grid row-span-1 h-fit text-2xl md:text-3xl lg:text-4xl font-bold">Things I've worked on</div>
+        <div className="grid row-span-9 w-full h-full overflow-y-auto overflow-x-auto">
+          <div className={`grid grid-flow-row grid-rows-3 md:grid-flow-col-dense md:grid-cols-3 md:grid-rows-1 gap-2 h-fit py-10 md:overflow-y-hidden md:overflow-x-hidden`}>
+            {projects.map((x:ProjectDetails,i:number)=>
+              <ProjectCard projectDetails={x} id={"projcard-"+i.toString()} key={i.toString()}/>
+            )}
+          </div>
         </div>
       </div>
 
       {/* Experience*/}
-      <div className="flex flex-col w-screen h-screen p-5">
+      <div id="experience" className="flex flex-col w-screen h-fit min-h-screen p-4">
+        <div className="flex flex-col w-full h-full bg-base-100 rounded-lg p-1 gap-5">
           <div className="flex w-full text-2xl md:text-3xl lg:text-4xl">Experience</div>
-          <div className="flex">
-            Equoia
-          </div>
+          <Experience experience={experiences[0]}/>
+        </div>
       </div>
 
     
       {/* contact me form */}
-      <div className="flex flex-col w-full h-screen p-5 items-center justify-center">
+      <div id="contact" className="flex flex-col w-full h-screen p-5 items-center justify-center">
           
           <form className="flex flex-col items-center gap-5 w-full lg:w-1/2 border-2 bg-base-100 border-base-300 shadow-xl rounded-lg p-5 h-[90%]" action={"https://docs.google.com/forms/d/e/1FAIpQLSfsA5cJ5HCwnlil0lZC9DTxsMkDpOLr9yeD0Z22oSMihOeZfg/formResponse"}>
             <div className="flex text-3xl font-semibold">Contact Me</div>

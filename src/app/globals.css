@@ -3,7 +3,7 @@
 @theme inline {
   --color-base-100: oklch(99% 0 0);
   --color-base-200: oklch(96% 0 0);
-  --color-base-300: oklch(92% 0 0);
+  --color-base-300: oklch(85% 0 0);
   --color-base-content: oklch(20% 0 0);
   --color-primary: oklch(51% 0.262 276.966);
   --color-primary-hover: color-mix(in oklab, var(--color-primary), black 10%);
@@ -13,12 +13,12 @@
   --color-secondary-hover: color-mix(in oklab, var(--color-secondary), black 10%);
   --color-secondary-content: oklch(98% 0.022 95.277);
   
-  --color-accent: oklch(55% 0.288 302.321);
+  --color-accent: oklch(55% 0.288 295.321);
   --color-accent-hover: color-mix(in oklab, var(--color-accent), black 10%);
   --color-accent-content: oklch(97% 0.014 308.299);
   
   --color-neutral: oklch(26% 0 0);
-  --color-neutral-hover: color-mix(in oklab, var(--color-neutral), white 10%);
+  --color-neutral-hover: color-mix(in oklab, var(--color-neutral), white 20%);
   --color-neutral-content: oklch(98% 0 0);
 }
 
@@ -27,4 +27,14 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.zoom-in-div{
+  transform: scale(80%);
+  transition: transform 1s ease-out;
+}
+.zoom-in-div-in-view{
+  transform: scale(100%);
+  transition: transform 1s ease-out;
 }
