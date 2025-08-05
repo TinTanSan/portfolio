@@ -22,7 +22,7 @@ export const experiences:Array<ExperienceDetails> = [
         contributions:[
             {title: 'Lead developer of React Prototype',
             details: [
-                'liased with the CEO and CO-CEO to better understand key requirements',
+                'liased with the higher management to better understand key requirements',
                 'built custom components based on Figma design using React and tailwindcss',
                 'Ensured team was keeping up with the KanBan chart',
                 'Created an customer dashboard to showcase usage of IOT devices called droids'
