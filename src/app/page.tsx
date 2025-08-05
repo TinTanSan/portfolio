@@ -7,6 +7,7 @@ import { ProjectDetails, projects } from "./utils/projects";
 import ProjectCard from "./components/ProjectCard";
 import Experience from "./components/Experience";
 import { experiences } from "./utils/experiences";
+import Navbar from "./navbar";
 
 export default function Home() {
   
@@ -33,6 +34,7 @@ export default function Home() {
   return (
     <div  className="flex flex-col w-full overflow-x-hidden h-full bg-base-200 text-base-content 2xl:text-xl gap-5">
       <title>Tirth Patel</title>
+      <Navbar />
       {/* landing page (about me) */}
       <div id="aboutme" className="flex flex-col p-5 w-screen h-screen text-wrap flex-wrap justify-center md:justify-end md:pb-10 gap-5">
         <div className="flex text-4xl font-bold">
@@ -54,10 +56,10 @@ export default function Home() {
         <Link target="_blank" className="flex w-fit px-5 rounded-lg bg-primary hover:bg-primary-hover text-primary-content h-10 items-center justify-center shadow-lg active:shadow-none" href={"/resume"}>Resume</Link>
         {/* github */}
         <Link href={"https://github.com/TinTanSan"}>
-          <Image priority={true} src={"/gh.svg"} alt="GH" width={40} height={40} />
+          <Image priority={false} src={"/gh.svg"} alt="GH" width={40} height={40} />
         </Link>
         <Link href={"https://www.linkedin.com/in/tirth-patel-748a89367/"}>
-          <Image priority={true} src={"/linkedin.svg"} className="rounded-lg" alt="Linkedin" width={40} height={40} />
+          <Image priority={false} src={"/linkedin.svg"} className="rounded-lg" alt="Linkedin" width={40} height={40} />
         </Link>
 
         </div>
@@ -75,13 +77,63 @@ export default function Home() {
       </div>
 
       {/* Experience*/}
-      <div id="experience" className="flex flex-col w-screen h-fit min-h-screen p-4">
-        <div className="flex flex-col w-full h-full bg-base-100 rounded-lg p-1 gap-5">
+      <div id="experience" className="flex flex-col w-screen max-h-fit h-screen p-1">
+        <div className="flex flex-col w-full h-full bg-base-100 rounded-lg p-4 gap-5">
           <div className="flex w-full text-2xl md:text-3xl lg:text-4xl">Experience</div>
           <Experience experience={experiences[0]}/>
         </div>
       </div>
-
+      
+      {/*  skill set */}
+      <div className="flex flex-col w-full h-screen p-5 gap-10">
+        <div className="flex flex-col w-full h-fit">
+          <div className="flex h-10 w-full text-2xl md:text-3xl lg:text-4xl font-bold">Skillset</div>
+          <div className="flex text-xl">Gears that power my code</div>
+        </div>
+        <div className="grid grid-flow-row-dense grid-rows-6 grid-cols-1 justify-center items-center gap-2 w-full h-full py-5">
+            <div className="w-full row-span-2 col-span-fullh-full grid grid-flow-row-dense md:grid-flow-col-dense gap-2 grid-cols-5 md:grid-cols-6 grid-rows-2 md:grid-rows-1">
+              <div className="w-full h-full grid md:row-span-1 md:col-span-1 col-span-full col-start-1 items-center text-xl">Languages</div>
+              <div className="w-full h-full grid grid-flow-col-dense grid-cols-5 grid-rows-1 row-span-1 col-span-full md:col-start-2 ">
+                <Image src={'javascript.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image src={'typescript.svg'} width={60} height={60} alt="TS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image src={'python.svg'} width={60} height={60} alt="PY" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
+                <Image src={'rust.svg'} width={60} height={60} alt="RS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image src={'java.svg'} width={60} height={60} alt="JV" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+              </div>
+            </div>
+            
+            <div className="w-full row-span-2 col-span-fullh-full grid grid-flow-row-dense md:grid-flow-col-dense gap-2 grid-cols-5 md:grid-cols-6 grid-rows-2 md:grid-rows-1">
+              <div className="w-full h-full grid md:row-span-1 md:col-span-2 col-span-full col-start-1 items-center text-xl text-nowrap">Frameworks and tools</div>
+              <div className="w-full h-full grid grid-flow-col-dense grid-cols-4 grid-rows-1 row-span-1 col-span-full md:col-start-3 ">
+                <Image src={'nextjs.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image src={'react.svg'} width={60} height={60} alt="TS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image src={'electron.svg'} width={60} height={60} alt="PY" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
+                <Image src={'tailwind.svg'} width={60} height={60} alt="RS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+              </div>
+            </div>
+                
+            <div className="w-full row-span-2 col-span-fullh-full grid grid-flow-row-dense md:grid-flow-col-dense gap-2 grid-cols-5 md:grid-cols-6 grid-rows-2 md:grid-rows-1">
+              <div className="w-full h-full grid md:row-span-1 md:col-span-2 col-span-full col-start-1 items-center text-xl text-nowrap">Other</div>
+              <div className="w-full h-full grid grid-flow-col-dense grid-cols-4 grid-rows-1 row-span-1 col-span-full md:col-start-3 ">
+                <Image src={'mysql.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image src={'gh.svg'} width={60} height={60} alt="TS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image src={'docker.svg'} width={60} height={60} alt="PY" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
+                <Image src={'aws.svg'} width={60} height={60} alt="RS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+              </div>
+            </div>
+                
+                
+            {/*
+            
+            <Image src={'gh.svg'} width={60} height={60} alt="GH" className="grid rounded-lg" />
+            <Image src={'mysql.svg'} width={60} height={60} alt="SQL" className="grid rounded-lg" />
+            
+            <Image src={'docker.svg'} width={60} height={60} alt="DK" className="grid rounded-lg" />
+            <Image src={'aws.svg'} width={60} height={60} alt="AW" className="grid rounded-lg" /> */}
+            
+            
+        </div>
+      </div>
     
       {/* contact me form */}
       <div id="contact" className="flex flex-col w-full h-screen p-5 items-center justify-center">
