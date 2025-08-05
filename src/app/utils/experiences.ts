@@ -16,7 +16,7 @@ export const experiences:Array<ExperienceDetails> = [
         title: "Intern Software Developer",
         company: "Equoia",
         overview: `I worked with Equoia during my final year at RMIT for a core subject for my course, where i was a lead developer of a team of 3 developers, a designer and a scrum master;
-              building a prototype frontend for Equoia. After which i continued work with Equoia, where I worked on internal tools.`,
+              building a prototype frontend for Equoia. After which i continued with Equoia, working on internal tools.`,
         duration: '2024-2025 ',
         location: "Melbourne Hybrid",
         contributions:[
