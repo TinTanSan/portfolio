@@ -15,34 +15,32 @@ export const experiences:Array<ExperienceDetails> = [
     {
         title: "Intern Software Developer",
         company: "Equoia",
-        overview: `I worked with Equoia during my final year at RMIT for a core subject for my course, where i was a lead developer of a team of 3 developers, a designer and a scrum master;
-              building a prototype frontend for Equoia. After which i continued with Equoia, working on internal tools.`,
+        overview: `I collaborated with Equoia during my final year at RMIT as part of a core course project, where I served as the lead developer in a cross-functional team of five—including three developers, a designer, and a scrum master. Together, we built a prototype frontend for Equoia. Following the success of the project, I continued working with Equoia to develop and maintain internal tools.`,
         duration: '2024-2025 ',
         location: "Melbourne Hybrid",
         contributions:[
             {title: 'Lead developer of React Prototype',
             details: [
-                'liased with the higher management to better understand key requirements',
-                'built custom components based on Figma design using React and tailwindcss',
-                'Ensured team was keeping up with the KanBan chart',
-                'Created an customer dashboard to showcase usage of IOT devices called droids'
+                'Liaised with senior management to gather and refine key project requirements',
+                'Developed custom UI components from Figma designs using React and Tailwind CSS',
+                'Monitored and guided team progress using a Kanban board',
+                'Built a customer dashboard to visualize the usage of IoT devices (called "Droids")'
             ]},
             {
-                title:'Internal Storage tool',
+                title:'Internal Storage Tool for IoT Devices',
                 details:[
-                    `Replaced existing storage system on IOT devices to use SQLite and Python to ensure lightweight operations without sacrificing
-                  storage capabilites`,
-                  "Integrated the module into the main program on the IOT device",
-                  "Improved memory usage by ~20% allowing for a more stable program"
+                    'Replaced legacy storage system with a lightweight SQLite and Python-based solution to improve performance on IoT devices',
+                    'Integrated the new storage module into the main device firmware',
+                    'Reduced memory usage by ~20%, resulting in improved stability and performance'
                 ]
             },
             {
                 title: 'AWS migration Planning and documentation',
                 details:[
-                    `Used AWS cost calculator to mix and match best solution for a Full stack application hosted on AWS`,
-                    `Documented a solution using API Gateway, DynamoDB, Lambda functions and Amplify`,
-                    `Created a data flow diagram to document the ways in which AWS can be used to replace existing frontend provider`,
-                    `Implemented functions to help migrate data to DynamoDB and to aggregate and drop data after month`
+                    'Used AWS Pricing Calculator to identify cost-effective solutions for a full-stack application',
+                    'Drafted a migration architecture using API Gateway, DynamoDB, Lambda, and Amplify',
+                    'Created a detailed data flow diagram to map the replacement of the existing frontend provider',
+                    'Developed scripts for data migration, aggregation, and periodic cleanup in DynamoDB'
                 ]
             }
         ]
