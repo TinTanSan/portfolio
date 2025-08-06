@@ -32,15 +32,16 @@ export default function Home() {
 
 
   return (
-    <div  className="flex flex-col items-center w-full overflow-x-hidden h-full bg-base-200 text-base-content 2xl:text-xl gap-5">
+    <div className="flex flex-col relative items-center w-full overflow-x-hidden h-screen bg-base-200 text-base-content 2xl:text-xl gap-5 md:snap-y md:snap-proximity">
       <title>Tirth Patel</title>
-      <Navbar />
+        <Navbar />
       {/* landing page (about me) */}
-      <div id="aboutme" className="flex flex-col p-5 w-screen h-screen text-wrap flex-wrap justify-center md:justify-end md:pb-10 gap-5">
-        <div className="flex text-4xl font-bold">
+      <div id="aboutme" className="flex flex-col shrink-0 p-5 w-screen h-[90vh] justify-center md:justify-end gap-5">
+        <div className="flex text-4xl font-bold ">
           About me
         </div>
-        <div className="flex flex-col text-xl w-[75%] flex-wrap">
+        <div className="flex w-full md:h-1/2" />
+        <div className="flex flex-col text-xl w-[75%] h-fit text-wrap">
           I'm a curious and driven individual with a strong interest in technology, 
           problem-solving, and continuous learning. 
           <br />
@@ -54,31 +55,34 @@ export default function Home() {
         </div>
         <div className="flex w-full h-fit items-center gap-2 lg:gap-5">
         <Link target="_blank" className="flex w-fit px-5 rounded-lg bg-primary hover:bg-primary-hover text-primary-content h-10 items-center justify-center shadow-lg active:shadow-none" href={"/resume"}>Resume</Link>
-        {/* github */}
-        <Link href={"https://github.com/TinTanSan"}>
-          <Image priority={false} src={"/gh.svg"} alt="GH" width={40} height={40} />
-        </Link>
-        <Link href={"https://www.linkedin.com/in/tirth-patel-748a89367/"}>
-          <Image priority={false} src={"/linkedin.svg"} className="rounded-lg" alt="Linkedin" width={40} height={40} />
-        </Link>
+          <Link href={"https://github.com/TinTanSan"}>
+            <Image priority={false} src={"/gh.svg"} alt="GH" width={40} height={40} />
+          </Link>
+          <Link href={"https://www.linkedin.com/in/tirth-patel-748a89367/"}>
+            <Image priority={false} src={"/linkedin.svg"} className="rounded-lg" alt="Linkedin" width={40} height={40} />
+          </Link>
 
-        </div>
-      </div>
+          </div>
+      </div> 
+      <div id="spacer" className="flex h-1 shrink-0" />
+     
       {/* projects */}
-      <div id="projects" className="grid grid-flow-row grid-cols-1 grid-rows-11 gap-2 p-5 py-2 w-screen h-screen">
-        <div className="grid row-span-1 h-fit text-2xl md:text-3xl lg:text-4xl font-bold">Things I've worked on</div>
+      <div id="projects" className="grid grid-flow-row grid-cols-1 grid-rows-11 gap-2 py-4 w-screen h-[92vh] shrink-0 snap-always snap-end">
+        {/* <div className="flex"></div> */}
+        <div className=" px-5 grid row-span-1 h-fit text-2xl md:text-3xl lg:text-4xl font-bold">Things I've worked on</div>
         <div className="grid row-span-9 w-full h-full md:overflow-y-hidden overflow-x-auto">
-          <div className={`grid grid-flow-row grid-rows-3 md:grid-flow-col-dense md:grid-cols-3 md:grid-rows-1 gap-2 h-fit  md:overflow-y-hidden md:overflow-x-hidden`}>
+          <div className={`grid grid-flow-row grid-rows-3 px-5 md:grid-flow-col-dense md:grid-cols-3 md:grid-rows-1 gap-2 h-full w-full shrink-0  md:overflow-y-hidden md:overflow-x-hidden`}>
             {projects.map((x:ProjectDetails,i:number)=>
               <ProjectCard projectDetails={x} id={"projcard-"+i.toString()} key={i.toString()}/>
             )}
           </div>
         </div>
-        <div className="grid col-span-full grid-flow-col w-fit row-span-1 h-fit gap-1 text-xl justify-self-center">
-            Find other things i'm working on, on my 
-            <Link target="_blank" className=" flex underline text-primary" href={"https://github.com/TinTanSan"}>GitHub</Link>
+        <div className=" px-5 inline md:grid col-span-full grid-flow-col w-fit row-span-1 h-fit gap-1 text-xl justify-self-center text-[1rem]  md:text-xl">
+              Find other things i'm working on, on my 
+              <Link target="_blank" className=" flex underline text-primary" href={"https://github.com/TinTanSan"}>GitHub</Link>
         </div>
       </div>
+      
       {/* Experience*/}
       <div id="experience" className="flex flex-col w-screen max-h-fit h-screen p-1">
         <div className="flex flex-col w-full h-full bg-base-100 rounded-lg p-4 gap-5">
@@ -88,7 +92,7 @@ export default function Home() {
       </div>
       
       {/*  skill set */}
-      <div className="flex flex-col w-full h-screen p-5 gap-10">
+      <div className="flex flex-col w-full h-[95vh] shrink-0 p-5 gap-10 snap-always snap-end">
         <div className="flex flex-col w-full h-fit">
           <div className="flex h-10 w-full text-2xl md:text-3xl lg:text-4xl font-bold">Skillset</div>
           <div className="flex text-xl">Gears that power my code</div>
@@ -116,9 +120,10 @@ export default function Home() {
               </div>
             </div>
             {/* others */}
-            <div className="w-full row-span-2 col-span-fullh-full grid grid-flow-row-dense md:grid-flow-col-dense gap-2 grid-cols-5 md:grid-cols-6 grid-rows-2 md:grid-rows-1">
-              <div className="w-full h-full grid md:row-span-1 md:col-span-2 col-span-full col-start-1 items-center text-xl text-nowrap">Other</div>
-              <div className="w-full h-full grid grid-flow-col-dense grid-cols-4 grid-rows-1 row-span-1 col-span-full md:col-start-3 ">
+            <div className="w-full row-span-2 col-span-fullh-full grid grid-flow-row-dense md:grid-flow-col-dense gap-2 grid-cols-6 md:grid-cols-6 grid-rows-2 md:grid-rows-1">
+              <div className="w-full h-full grid md:row-span-1 md:col-span-1 col-span-full items-center text-xl text-nowrap">Other</div>
+              <div className="w-full h-full grid grid-flow-col-dense grid-cols-5 grid-rows-1 row-span-1 col-span-full md:col-start-2 ">
+                <Image title="mysql" src={'mongodb.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
                 <Image title="mysql" src={'mysql.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
                 <Image title="git" src={'gh.svg'} width={60} height={60} alt="TS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
                 <Image title="docker" src={'docker.svg'} width={60} height={60} alt="PY" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
@@ -132,9 +137,8 @@ export default function Home() {
       </div>
     
       {/* contact me form */}
-      <div id="contact" className="flex flex-col w-full h-screen p-5 items-center justify-center">
-          
-          <form className="flex flex-col items-center gap-5 w-full lg:w-1/2 border-2 bg-base-100 border-base-300 shadow-xl rounded-lg p-5 h-[90%]" action={"https://docs.google.com/forms/d/e/1FAIpQLSfsA5cJ5HCwnlil0lZC9DTxsMkDpOLr9yeD0Z22oSMihOeZfg/formResponse"}>
+      <div id="contact" className="flex flex-col w-screen h-full p-5 items-center justify-center shirnk-0 grow-0 snap-always snap-end">
+          <form className="flex flex-col items-center gap-5 w-full lg:w-1/2 border-2 bg-base-100 border-base-300 shadow-xl rounded-lg p-5 h-[85vh]" action={"https://docs.google.com/forms/d/e/1FAIpQLSfsA5cJ5HCwnlil0lZC9DTxsMkDpOLr9yeD0Z22oSMihOeZfg/formResponse"}>
             <div className="flex text-3xl font-semibold">Contact Me</div>
             <div className="flex flex-col w-full lg:w-[80%]">
               <label className="flex text-lg">Email</label>
@@ -171,5 +175,6 @@ export default function Home() {
       </div>
 
     </div>
+
   );
 }
