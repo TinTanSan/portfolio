@@ -3,6 +3,7 @@ import React from 'react'
 
 import Image from 'next/image'
 import { ProjectDetails } from '../utils/projects'
+import Link from 'next/link'
 // component for a project
 
 type props = {
@@ -24,9 +25,9 @@ export default function ProjectCard({projectDetails, id}:props) {
                 </div>
               </div>
               <div className='grid row-span-1 col-span-1 items-center'>
-                <button className='bg-neutral hover:bg-neutral-hover text-neutral-content px-2 rounded-lg  items-center justify-center text-nowrap w-full h-10'>
+                <Link href={"/projects/"+projectDetails.projectURL} className='bg-neutral hover:bg-neutral-hover text-neutral-content px-2 rounded-lg  items-center justify-center text-nowrap w-full h-10'>
                   Read more
-                </button>
+                </Link>
               </div>
             </div>
         </div>
