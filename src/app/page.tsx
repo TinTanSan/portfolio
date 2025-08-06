@@ -67,7 +67,7 @@ export default function Home() {
       <div id="spacer" className="flex h-1 shrink-0" />
      
       {/* projects */}
-      <div id="projects" className="grid grid-flow-row grid-cols-1 grid-rows-11 gap-2 py-4 w-screen h-[92vh] shrink-0 snap-always snap-end">
+      <div id="projects" className="grid grid-flow-row grid-cols-1 grid-rows-10 gap-2 py-4 w-screen h-[92vh] shrink-0 snap-always snap-end">
         {/* <div className="flex"></div> */}
         <div className=" px-5 grid row-span-1 h-fit text-2xl md:text-3xl lg:text-4xl font-bold">Things I've worked on</div>
         <div className="grid row-span-9 w-full h-full md:overflow-y-hidden overflow-x-auto">
