@@ -67,8 +67,7 @@ export default function Home() {
       <div id="spacer" className="flex h-1 shrink-0" />
      
       {/* projects */}
-      <div id="projects" className="grid grid-flow-row grid-cols-1 grid-rows-10 gap-2 py-4 w-screen h-[92vh] shrink-0 snap-always snap-end">
-        {/* <div className="flex"></div> */}
+      <div id="projects" className="grid grid-flow-row grid-cols-1 grid-rows-10 py-4 w-screen h-[92vh] shrink-0 snap-always snap-end">
         <div className=" px-5 grid row-span-1 h-fit text-2xl md:text-3xl lg:text-4xl font-bold">Things I've worked on</div>
         <div className="grid row-span-9 w-full h-full md:overflow-y-hidden overflow-x-auto">
           <div className={`grid grid-flow-row grid-rows-3 px-5 md:grid-flow-col-dense md:grid-cols-3 md:grid-rows-1 gap-2 h-full w-full shrink-0  md:overflow-y-hidden md:overflow-x-hidden`}>
@@ -77,7 +76,7 @@ export default function Home() {
             )}
           </div>
         </div>
-        <div className=" px-5 inline md:grid col-span-full grid-flow-col w-fit row-span-1 h-fit gap-1 text-xl justify-self-center text-[1rem]  md:text-xl">
+        <div className=" px-5 inline md:grid col-span-full grid-flow-col w-fit row-span-1 h-fit gap-1 justify-self-center text-[1rem]  md:text-xl">
               Find other things i'm working on, on my 
               <Link target="_blank" className=" flex underline text-primary" href={"https://github.com/TinTanSan"}>GitHub</Link>
         </div>
