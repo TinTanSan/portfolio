@@ -8,6 +8,7 @@ import ProjectCard from "./components/ProjectCard";
 import Experience from "./components/Experience";
 import { experiences } from "./utils/experiences";
 import Navbar from "./navbar";
+import { repoName } from "../../next.config";
 
 export default function Home() {
   
@@ -56,7 +57,7 @@ export default function Home() {
         <div className="flex w-full h-fit items-center gap-2 lg:gap-5">
         <Link target="_blank" className="flex w-fit px-5 rounded-lg bg-primary hover:bg-primary-hover text-primary-content h-10 items-center justify-center shadow-lg active:shadow-none" href={"/resume"}>Resume</Link>
           <Link href={"https://github.com/TinTanSan"}>
-            <Image priority={false} src={"/gh.svg"} alt="GH" width={40} height={40} />
+            <Image priority={false} src={`${repoName}/gh.svg`} alt="GH" width={40} height={40} />
           </Link>
           <Link href={"https://www.linkedin.com/in/tirth-patel-748a89367/"}>
             <Image priority={false} src={"/linkedin.svg"} className="rounded-lg" alt="Linkedin" width={40} height={40} />
