@@ -91,23 +91,28 @@ export const projects:Array<ProjectDetails> = [
       projectName: "The Money game",
       projectURL: "the_money_game",
       projectOverview: `A simple game about earning the most possible money from financial investments such as real estate
-      equities and intrest paying deposits.`,
+      equities and interest paying deposits.`,
       projectInspriation:`
         Long ago I played a game called Rat Race which had a similar premise of getting rich. The key distinction that I wanted to 
         show in my game was the use of more realistic values for financial tools like deposit interest rates and real estate which in Rat Race
         were picked in a way in which the player would earn money from very little money which is not always the case. More over, i wanted
         to implement new mechanics such as taxation at the end of every year (12 month period) and an enhanced securities exchange with many more
-        companies to invest in.
+        equities to invest in.
       `,
       projectChallenges:[
         `the main challenge was that I didn't want to build a backend for this as that would incur more cost to me, so instead I wanted to make use of 
-        localstorage and indexDB for storing all of the data on the client side`,
+        localstorage for storing all of the data on the client side`,
+        `given the limited storage offered by localstorage i may have to utilise indexedDB instead which offers far superior storage capabilites. The only 
+        concern again being the tamperability of the data, i may have to implement functions to encrypt and decrypt data as they are retreived from the database`,
         `storing the data on the client side has an implication that the users are able to tamper with the data if it is not securely stored. That being said,
         it may also not make sense to encrypt data at every tick of the game as this would severly hinder the experience of the user.`,
         `a challenge also arises in the fact that I am not a finance major by any means, and therefore I don't know everything there is to know in finance so 
-        some of the things that I put on there are what i found in my research when looking for certain real life financial mechanics`
+        some of the things that I put on there are what i found in my research when looking for certain real life financial mechanics`,
+        
       ],
-      currentProgress:``,
+      currentProgress:`Currently the logic behind the stocks work on a subset of randomly generated stocks using localstorage. I have also got a working 
+      user interface to do the actual trading. The next steps for this project are to migrate to indexedDB for extra storage capabilities and expand the 
+      number of stocks available.`,
       techUsed: ['nextjs','typescript','tailwind'],
     },
 ]
