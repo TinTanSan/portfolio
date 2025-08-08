@@ -1,14 +1,10 @@
 'use client'
 import Image from 'next/image';
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 export default function Navbar() {
-    const [width, setWidth]= useState(-1);
     const [openHamburgerMenu, setOpenHamburger] = useState(false);
-    useEffect(()=>{
-        setWidth(window.screen.availWidth);
-    },[]);
     const buttonStyle = 'bg-accent hover:bg-accent-hover hover:scale-110 transition-all duration-500 flex h-8 items-center justify-center px-5 rounded-lg text-accent-content'
 
     return (

@@ -9,14 +9,14 @@ export default function Project() {
   const [loading, setLoading] = useState(true);
   const [projectDetails, setProjectDetails] = useState<ProjectDetails>(undefined);
   useEffect(()=>{
-    setProjectDetails(_=>{ 
+    setProjectDetails(()=>{ 
       setLoading(false); 
       
       return projects.find(x=>x.projectURL===project)
     });
 
     
-  },[])
+  },[project])
 
   return (
     projectDetails !==undefined ?

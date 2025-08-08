@@ -42,7 +42,7 @@ export default function Home() {
         </div>
         <div className="flex w-full md:h-1/2" />
         <div className="flex flex-col text-xl w-[75%] h-fit text-wrap">
-          I'm a curious and driven individual with a strong interest in technology, 
+          I&apos;m a curious and driven individual with a strong interest in technology, 
           problem-solving, and continuous learning. 
           <br />
           <div className="h-2" />
@@ -50,7 +50,7 @@ export default function Home() {
           building creative solutions, and collaborating with others to bring ideas to life. 
           <br />
           <div className="h-2" />
-          Whether I'm coding a new project, learning a new tool, or diving into a complex challenge, 
+          Whether I&apos;m coding a new project, learning a new tool, or diving into a complex challenge, 
           I approach everything with a growth mindset and a desire to make a positive impact.
         </div>
         <div className="flex w-full h-fit items-center gap-2 lg:gap-5">
@@ -68,7 +68,7 @@ export default function Home() {
      
       {/* projects */}
       <div id="projects" className="grid grid-flow-row grid-cols-1 grid-rows-10 py-4 w-screen h-[92vh] shrink-0 snap-always snap-end">
-        <div className=" px-5 grid row-span-1 h-fit text-2xl md:text-3xl lg:text-4xl font-bold">Things I've worked on</div>
+        <div className=" px-5 grid row-span-1 h-fit text-2xl md:text-3xl lg:text-4xl font-bold">Things I&apos;ve worked on</div>
         <div className="grid row-span-9 w-full h-full md:overflow-y-hidden overflow-x-auto">
           <div className={`grid grid-flow-row grid-rows-3 px-5 md:grid-flow-col-dense md:grid-cols-3 md:grid-rows-1 gap-2 h-full w-full shrink-0  md:overflow-y-hidden md:overflow-x-hidden`}>
             {projects.map((x:ProjectDetails,i:number)=>
@@ -77,7 +77,7 @@ export default function Home() {
           </div>
         </div>
         <div className=" px-5 inline md:grid col-span-full grid-flow-col w-fit row-span-1 h-fit gap-1 justify-self-center text-[1rem]  md:text-xl">
-              Find other things i'm working on, on my 
+              Find other things i&apos;m working on, on my 
               <Link target="_blank" className=" flex underline text-primary" href={"https://github.com/TinTanSan"}>GitHub</Link>
         </div>
       </div>
@@ -101,32 +101,32 @@ export default function Home() {
             <div className="w-full row-span-2 col-span-fullh-full grid grid-flow-row-dense md:grid-flow-col-dense gap-2 grid-cols-5 md:grid-cols-6 grid-rows-2 md:grid-rows-1">
               <div className="w-full h-full grid md:row-span-1 md:col-span-1 col-span-full col-start-1 items-center text-xl">Languages</div>
               <div className="w-full h-full grid grid-flow-col-dense grid-cols-5 grid-rows-1 row-span-1 col-span-full md:col-start-2 ">
-                <Image title="javascript" src={'javascript.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="typescript" src={'typescript.svg'} width={60} height={60} alt="TS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="python" src={'python.svg'} width={60} height={60} alt="PY" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
-                <Image title="rust" src={'rust.svg'} width={60} height={60} alt="RS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="java" src={'java.svg'} width={60} height={60} alt="JV" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="javascript" src={'/javascript.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="typescript" src={'/typescript.svg'} width={60} height={60} alt="TS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="python" src={'/python.svg'} width={60} height={60} alt="PY" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
+                <Image title="rust" src={'/rust.svg'} width={60} height={60} alt="RS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="java" src={'/java.svg'} width={60} height={60} alt="JV" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
               </div>
             </div>
             {/* frameworks */}
             <div className="w-full row-span-2 col-span-fullh-full grid grid-flow-row-dense md:grid-flow-col-dense gap-2 grid-cols-5 md:grid-cols-6 grid-rows-2 md:grid-rows-1">
               <div className="w-full h-full grid md:row-span-1 md:col-span-2 col-span-full col-start-1 items-center text-xl text-nowrap">Frameworks and tools</div>
               <div className="w-full h-full grid grid-flow-col-dense grid-cols-4 grid-rows-1 row-span-1 col-span-full md:col-start-3 ">
-                <Image title="nextJS" src={'nextjs.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="react" src={'react.svg'} width={60} height={60} alt="TS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="electronJS" src={'electron.svg'} width={60} height={60} alt="PY" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
-                <Image title="tailwind CSS" src={'tailwind.svg'} width={60} height={60} alt="RS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="nextJS" src={'/nextjs.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="react" src={'/react.svg'} width={60} height={60} alt="TS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="electronJS" src={'/electron.svg'} width={60} height={60} alt="PY" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
+                <Image title="tailwind CSS" src={'/tailwind.svg'} width={60} height={60} alt="RS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
               </div>
             </div>
             {/* others */}
             <div className="w-full row-span-2 col-span-fullh-full grid grid-flow-row-dense md:grid-flow-col-dense gap-2 grid-cols-6 md:grid-cols-6 grid-rows-2 md:grid-rows-1">
               <div className="w-full h-full grid md:row-span-1 md:col-span-1 col-span-full items-center text-xl text-nowrap">Other</div>
               <div className="w-full h-full grid grid-flow-col-dense grid-cols-5 grid-rows-1 row-span-1 col-span-full md:col-start-2 ">
-                <Image title="mysql" src={'mongodb.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="mysql" src={'mysql.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="git" src={'gh.svg'} width={60} height={60} alt="TS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="docker" src={'docker.svg'} width={60} height={60} alt="PY" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
-                <Image title="aws" src={'aws.svg'} width={60} height={60} alt="RS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="mysql" src={'/mongodb.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="mysql" src={'/mysql.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="git" src={'/gh.svg'} width={60} height={60} alt="TS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="docker" src={'/docker.svg'} width={60} height={60} alt="PY" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
+                <Image title="aws" src={'/aws.svg'} width={60} height={60} alt="RS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
               </div>
             </div>
                 
