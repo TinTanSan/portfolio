@@ -28,7 +28,7 @@ export default function Home() {
         const elem = document.getElementById("projcard-"+i.toString());
         observer.observe(elem);
       })
-      
+      console.log(`${repoName}/gh.svg`)
     },[])
 
 
