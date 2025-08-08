@@ -17,60 +17,45 @@ export default function Project() {
 
     
   },[])
-   useEffect(()=>{
-      if (projectDetails !== undefined){
-        const observer = new IntersectionObserver(
-        (entries)=>{
-          entries.forEach(entry=>{
-          if (entry.isIntersecting){
-            entry.target.classList.add('zoom-in-div-in-view')
-            entry.target.classList.remove('zoom-in-div')
-          }else{
-            entry.target.classList.remove('zoom-in-div-in-view')
-            entry.target.classList.add('zoom-in-div')
-          }
-        })}, 
-        
-        { 
-          threshold: 0.25
-        }
-      )
-        
-      const inspirationElem = document.getElementById("inspiration");  
-      const challengesElem = document.getElementById("challenges");
-      const progressElem = document.getElementById("progress")
-      console.log(inspirationElem)
-      console.log(challengesElem)
-      console.log(progressElem)
-      observer.observe(inspirationElem);
-      observer.observe(challengesElem);
-      observer.observe(progressElem);
-      }
-    
-    },[projectDetails])
 
   return (
     projectDetails !==undefined ?
-    <div className='flex flex-col w-screen overflow-hidden h-fit items-center p-5'>
-      
-      <div className='flex text-2xl justify-between w-full'>
-        <div className='flex w-fit h-fit'>
-          <Link className='flex bg-primary hover:bg-primary-hover text-primary-content w-28 justify-center items-center rounded-lg h-9 text-lg' href={"/"}>Home</Link>
+    <div className='flex flex-col w-screen h-screen items-center p-2 md:p-5 gap-2'>
+      {/* navigation bar */}
+      <div className='flex text-2xl justify-center h-[5vh] w-full'>
+        <div className='flex w-fit h-fit absolute left-2 md:left-5'>
+          <Link className='flex bg-primary hover:bg-primary-hover text-primary-content w-20 md:w-28 justify-center items-center rounded-lg h-9 text-[1rem] md:text-lg' href={"/"}>Home</Link>
         </div>
         <div>{projectDetails.projectName}</div>
-        <div></div>
+        <div className='flex' id='spacer'/>
       </div>
-      <div  className='flex relative flex-col w-screen h-screen overflow-y-scroll overscroll-contain p-5 rounded-lg'>
-        <div id='inspiration' className='flex relative w-full h-screen bg-zinc-200 shrink-0 rounded-lg'>
-          inspiration
-        </div>
 
-        <div id='challenges' className='flex w-full relative rounded-lg h-screen bg-zinc-300 shrink-0 shadow-2xl z-10 border-2 border-base-300 -top-5 shadow-zinc-400 shadow-[]'>
-          challenges
+      <div className='flex md:flex-row flex-col w-full h[92vh] pb-2 md:h-full gap-2 md:gap-5 overflow-y-auto'>
+        {/* inspiration + progress */}
+        <div className='flex flex-col w-full h-full gap-2 md:gap-5'>
+          <div className='bg-base-200 w-full h-full md:h-full border-2 border-base-300 shadow-lg rounded-xl flex flex-col gap-2 p-2 overflow-hidden'>
+            <h1 className='flex w-full justify-center text-xl'>Inspiration</h1>
+            <div className='flex text-wrap w-full text-sm md:text-lg'>
+            {projectDetails.projectInspriation}
+            </div>
+          </div>
+          <div className='flex flex-col bg-base-200 w-full h-fit md:h-full border-2 border-base-300 shadow-lg rounded-xl gap-2 p-2'>
+            <h1 className='flex w-full justify-center text-xl'>Progress</h1>
+            <div className='flex text-wrap w-full text-sm md:text-lg'>
+              {projectDetails.currentProgress}
+            </div>
+          </div>
         </div>
-        
-        <div id='progress' className='flex w-full h-1/2 shrink-0'>
-          Progress
+        {/* challenges */}
+        <div className='flex flex-col w-full h-fit md:h-full  bg-base-200 border-base-300 shadow-lg border-2 rounded-xl p-2'>
+          <h1 className='flex w-full justify-center text-xl'>Challenges</h1>
+          <div className='flex flex-col list-inside text-wrap w-full text-sm md:text-lg'> 
+          <ol className='pl-5 list-disc'>
+            {projectDetails.projectChallenges.map((challenge, i)=>
+              <li className='list-outside' key={i}>{challenge}</li>
+            )}
+          </ol>
+          </div>
         </div>
       </div>
 
