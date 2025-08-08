@@ -1,23 +1,15 @@
-'use client'
-import { useParams } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+
+
+import React from 'react'
 import { ProjectDetails, projects } from '../../utils/projects';
 import Link from 'next/link';
+export async function generateStaticParams() {
+  return [{ project: 'aes_gcm' }, { project: 'the_money_game' }, { project: 'password_manager' }];
+}
 
-export default function Project() {
-  const {project} = useParams();
-  const [loading, setLoading] = useState(true);
-  const [projectDetails, setProjectDetails] = useState<ProjectDetails>(undefined);
-  useEffect(()=>{
-    setProjectDetails(()=>{ 
-      setLoading(false); 
-      
-      return projects.find(x=>x.projectURL===project)
-    });
-
-    
-  },[project])
-
+export default async function Project({ params }: { params: Promise<{ project: string }> }) {
+  const param = (await params).project.toString()
+  const projectDetails:ProjectDetails | undefined = projects.find((x)=>x.projectURL === param);
   return (
     projectDetails !==undefined ?
     <div className='flex flex-col w-screen h-screen items-center p-2 md:p-5 gap-2'>
@@ -61,8 +53,6 @@ export default function Project() {
 
     </div>
     :
-      loading ? 
-        <div>Loading...</div> :
-        <div>Project Not found</div>
+    <div>Project Not found</div>
   )
 }
