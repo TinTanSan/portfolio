@@ -16,7 +16,7 @@ export default function Navbar() {
             </div>
             <div className='flex visible md:collapse flex-row w-fit gap-0'>
                 <button onClick={()=>{setOpenHamburger(!openHamburgerMenu)}}>
-                    <Image src={"/menu.svg"} alt='Menu'  width={40} height={40}/>
+                    <Image src={"/portfolio/menu.svg"} alt='Menu'  width={40} height={40}/>
                 </button>
             </div>
             <div className='flex w-full' />
@@ -27,7 +27,7 @@ export default function Navbar() {
                 <div className='flex flex-col fixed z-10 w-[98%] bg-base-100 border-2 border-base-300 rounded-lg pl-2 pb-5 h-fit gap-5 top-1 md:invisible'>
                     <div className='flex w-full'>
                     <button className='flex w-10 h-10' onClick={()=>{setOpenHamburger(!openHamburgerMenu)}}>
-                        <Image src={"/close_menu.svg"} alt='Menu' className='z-[60] border-2' width={40} height={40}/>
+                        <Image src={"/portfolio/close_menu.svg"} alt='Menu' className='z-[60] border-2' width={40} height={40}/>
                     </button>
                     </div>
                     <div className='flex flex-col gap-2 w-[80%]'>
@@ -37,10 +37,10 @@ export default function Navbar() {
                     </div>
                     <div className='flex w-full h-fit gap-5'> 
                         <Link href={"https://github.com/TinTanSan"}>
-                            <Image priority={false} src={"/gh.svg"} alt="GH" width={40} height={40} />
+                            <Image priority={false} src={"/portfolio/gh.svg"} alt="GH" width={40} height={40} />
                         </Link>
                         <Link href={"https://www.linkedin.com/in/tirth-patel-748a89367/"}>
-                            <Image priority={false} src={"/linkedin.svg"} className="rounded-lg" alt="Linkedin" width={40} height={40} />
+                            <Image priority={false} src={"/portfolio/linkedin.svg"} className="rounded-lg" alt="Linkedin" width={40} height={40} />
                         </Link>
                     </div>
                 </div>

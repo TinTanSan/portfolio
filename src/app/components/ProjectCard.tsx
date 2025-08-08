@@ -21,7 +21,7 @@ export default function ProjectCard({projectDetails, id}:props) {
               <div className='grid col-span-full row-span-1 grid-rows-1 grid-cols-3 w-full items-center'>
                 <div className='grid col-span-1'>Tech Stack:</div>
                 <div className='grid grid-flow-col-dense items-center col-span-2 h-fit w-full overflow-x-auto'>
-                  {projectDetails.techUsed.map((x, i)=><Image key={i} src={"/"+x+ ".svg"} width={35} height={35} alt={x}/>)}
+                  {projectDetails.techUsed.map((x, i)=><Image key={i} src={"/portfolio/"+x+ ".svg"} width={35} height={35} alt={x}/>)}
                 </div>
               </div>
               <div className='grid row-span-1 col-span-1 items-center'>

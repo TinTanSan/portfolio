@@ -57,10 +57,10 @@ export default function Home() {
         <div className="flex w-full h-fit items-center gap-2 lg:gap-5">
         <Link target="_blank" className="flex w-fit px-5 rounded-lg bg-primary hover:bg-primary-hover text-primary-content h-10 items-center justify-center shadow-lg active:shadow-none" href={"/resume"}>Resume</Link>
           <Link href={"https://github.com/TinTanSan"}>
-            <Image priority={false} src={`/${repoName}/gh.svg`} alt="GH" width={40} height={40} />
+            <Image priority={false} src={'/portfolio/gh.svg'} alt="GH" width={40} height={40} />
           </Link>
           <Link href={"https://www.linkedin.com/in/tirth-patel-748a89367/"}>
-            <Image priority={false} src={"/linkedin.svg"} className="rounded-lg" alt="Linkedin" width={40} height={40} />
+            <Image priority={false} src={'/portfolio/linkedin.svg'} className="rounded-lg" alt="Linkedin" width={40} height={40} />
           </Link>
 
           </div>
@@ -102,32 +102,32 @@ export default function Home() {
             <div className="w-full row-span-2 col-span-fullh-full grid grid-flow-row-dense md:grid-flow-col-dense gap-2 grid-cols-5 md:grid-cols-6 grid-rows-2 md:grid-rows-1">
               <div className="w-full h-full grid md:row-span-1 md:col-span-1 col-span-full col-start-1 items-center text-xl">Languages</div>
               <div className="w-full h-full grid grid-flow-col-dense grid-cols-5 grid-rows-1 row-span-1 col-span-full md:col-start-2 ">
-                <Image title="javascript" src={'/javascript.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="typescript" src={'/typescript.svg'} width={60} height={60} alt="TS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="python" src={'/python.svg'} width={60} height={60} alt="PY" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
-                <Image title="rust" src={'/rust.svg'} width={60} height={60} alt="RS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="java" src={'/java.svg'} width={60} height={60} alt="JV" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="javascript" src={'portfolio/javascript.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="typescript" src={'portfolio/typescript.svg'} width={60} height={60} alt="TS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="python" src={'portfolio/python.svg'} width={60} height={60} alt="PY" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
+                <Image title="rust" src={'portfolio/rust.svg'} width={60} height={60} alt="RS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="java" src={'portfolio/java.svg'} width={60} height={60} alt="JV" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
               </div>
             </div>
             {/* frameworks */}
             <div className="w-full row-span-2 col-span-fullh-full grid grid-flow-row-dense md:grid-flow-col-dense gap-2 grid-cols-5 md:grid-cols-6 grid-rows-2 md:grid-rows-1">
               <div className="w-full h-full grid md:row-span-1 md:col-span-2 col-span-full col-start-1 items-center text-xl text-nowrap">Frameworks and tools</div>
               <div className="w-full h-full grid grid-flow-col-dense grid-cols-4 grid-rows-1 row-span-1 col-span-full md:col-start-3 ">
-                <Image title="nextJS" src={'/nextjs.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="react" src={'/react.svg'} width={60} height={60} alt="TS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="electronJS" src={'/electron.svg'} width={60} height={60} alt="PY" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
-                <Image title="tailwind CSS" src={'/tailwind.svg'} width={60} height={60} alt="RS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="nextJS" src={'portfolio/nextjs.svg'} width={60} height={60} alt="Next" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="react" src={'portfolio/react.svg'} width={60} height={60} alt="React" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="electronJS" src={'portfolio/electron.svg'} width={60} height={60} alt="Electron" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
+                <Image title="tailwind CSS" src={'portfolio/tailwind.svg'} width={60} height={60} alt="Tailwind" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
               </div>
             </div>
             {/* others */}
             <div className="w-full row-span-2 col-span-fullh-full grid grid-flow-row-dense md:grid-flow-col-dense gap-2 grid-cols-6 md:grid-cols-6 grid-rows-2 md:grid-rows-1">
               <div className="w-full h-full grid md:row-span-1 md:col-span-1 col-span-full items-center text-xl text-nowrap">Other</div>
               <div className="w-full h-full grid grid-flow-col-dense grid-cols-5 grid-rows-1 row-span-1 col-span-full md:col-start-2 ">
-                <Image title="mysql" src={'/mongodb.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="mysql" src={'/mysql.svg'} width={60} height={60} alt="JS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="git" src={'/gh.svg'} width={60} height={60} alt="TS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
-                <Image title="docker" src={'/docker.svg'} width={60} height={60} alt="PY" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
-                <Image title="aws" src={'/aws.svg'} width={60} height={60} alt="RS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="mysql" src={'portfolio/mongodb.svg'} width={60} height={60} alt="Mongo" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="mysql" src={'portfolio/mysql.svg'} width={60} height={60} alt="MySQL" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="git" src={'portfolio/gh.svg'} width={60} height={60} alt="GH" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
+                <Image title="docker" src={'portfolio/docker.svg'} width={60} height={60} alt="Docker" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />  
+                <Image title="aws" src={'portfolio/aws.svg'} width={60} height={60} alt="AWS" className="grid rounded-lg h-10 w-10 md:h-20 md:w-20" />
               </div>
             </div>
                 
