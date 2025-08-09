@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
   distDir: './out',
   output: 'export',
   basePath: `/${repoName}`,
-  // assetPrefix: `/${repoName}/`,
 };
 
 export default nextConfig;
